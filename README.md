@@ -1,5 +1,8 @@
 # Dmd Readable
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DarrenPaulWright/dmd-readable.svg)](https://greenkeeper.io/)
+
+
 > A plugin for dmd and jsdoc-to-markdown to provide more readable docs
 >
 > [![npm][npm]][npm-url]
