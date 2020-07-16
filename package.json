@@ -1,6 +1,6 @@
 {
 	"name": "dmd-readable",
-	"version": "1.2.2",
+	"version": "1.2.2-pw",
 	"description": "A plugin for dmd and jsdoc-to-markdown to provide more readable docs",
 	"main": "index.js",
 	"files": [
@@ -23,33 +23,9 @@
 		"update-patch": "npm run update-commit && npm version patch",
 		"docs": "jsdoc2md *.js > README.md -t docs.hbs --plugin index.js -d 3"
 	},
-	"badges": {
-		"npm": {
-			"image": "https://img.shields.io/npm/v/{{name}}.svg",
-			"url": "https://npmjs.com/package/{{name}}"
-		},
-		"deps": {
-			"image": "https://david-dm.org/darrenpaulwright/{{name}}.svg",
-			"url": "https://david-dm.org/darrenpaulwright/{{name}}"
-		},
-		"size": {
-			"base": "https://packagephobia.now.sh/",
-			"image": "badge?p={{name}}",
-			"url": "result?p={{name}}"
-		},
-		"vulnerabilities": {
-			"base": "https://snyk.io/test/github/DarrenPaulWright/{{name}}",
-			"image": "/badge.svg?targetFile=package.json",
-			"url": "?targetFile=package.json"
-		},
-		"license": {
-			"image": "https://img.shields.io/github/license/DarrenPaulWright/{{name}}.svg",
-			"url": "https://npmjs.com/package/{{name}}/LICENSE.md"
-		}
-	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/DarrenPaulWright/dmd-readable.git"
+		"url": "git+https://github.com/paulthewalton/dmd-readable.git"
 	},
 	"keywords": [
 		"dmd",
@@ -63,9 +39,9 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/DarrenPaulWright/dmd-readable/issues"
+		"url": "https://github.com/paulthewalton/dmd-readable/issues"
 	},
-	"homepage": "https://github.com/DarrenPaulWright/dmd-readable#readme",
+	"homepage": "https://github.com/paulthewalton/dmd-readable#readme",
 	"dependencies": {
 		"change-case": "^4.1.1"
 	},

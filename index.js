@@ -1,13 +1,4 @@
 /**
- * @name Installation
- * @summary
- *
- * ```
- * npm install dmd-readable
- * ```
- */
-
-/**
  * @name About
  * @summary
  * Pass the plug-in name to [`jsdoc2md`](https://github.com/jsdoc2md/jsdoc-to-markdown) or [`dmd`](https://github.com/jsdoc2md/dmd):

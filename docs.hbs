@@ -3,12 +3,6 @@
 
 > {{package "description"}}
 >
-> {{#each (package "badges")}}[![{{@key}}][{{@key}}]][{{@key}}-url]
-  {{/each}}
+> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 {{>main}}
-
-{{#each (package "badges")}}
-[{{@key}}]: {{replace this.base "{{name}}" (package "name")}}{{replace this.image "{{name}}" (package "name")}}
-[{{@key}}-url]: {{replace this.base "{{name}}" (package "name")}}{{replace this.url "{{name}}" (package "name")}}
-{{/each}}
