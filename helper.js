@@ -1,6 +1,8 @@
-const path = require('path');
-const changeCase = require('change-case');
-const packageJson = require(path.resolve(process.cwd(), 'package.json'));
+const path = require("path");
+const changeCase = require("change-case");
+const packageJson = require(path.resolve(process.cwd(), "package.json"));
+const handlebars = require("handlebars");
+const ddata = require("dmd/helpers/ddata");
 
 /**
  * Reads info from the package.json file.
@@ -26,11 +28,11 @@ exports.package = (key) => packageJson[key];
  * @returns {string}
  */
 exports.changeCase = (to, string) => {
-	if (to === 'title') {
-		to = 'capitalCase';
+	if (to === "title") {
+		to = "capitalCase";
 	}
-	if (to.indexOf('Case') === -1) {
-		to += 'Case';
+	if (to.indexOf("Case") === -1) {
+		to += "Case";
 	}
 	return changeCase[to](string);
 };
@@ -45,7 +47,7 @@ exports.changeCase = (to, string) => {
  *
  * @returns {string}
  */
-exports.prefixLines = (string, replacer = '') => string ? replacer + string.replace(/[\r\n]/g, '$&' + replacer) : '';
+exports.prefixLines = (string, replacer = "") => (string ? replacer + string.replace(/[\r\n]/g, "$&" + replacer) : "");
 
 /**
  * Finds an object in an array with a matching key: value
@@ -71,7 +73,7 @@ exports.findBy = (array, key, value) => [array.find((item) => item[key] === valu
  *
  * @returns {string}
  */
-exports.replace = (string = '', pattern, newString) => string.replace(pattern, newString);
+exports.replace = (string = "", pattern, newString) => string.replace(pattern, newString);
 
 /**
  * Determines if the provided string is truthy and is different than the string provided the previous time this function was called
@@ -82,9 +84,39 @@ exports.replace = (string = '', pattern, newString) => string.replace(pattern, n
  *
  * @returns {boolean}
  */
-let current = '';
-exports.isNew = function(string) {
+let current = "";
+exports.isNew = function (string) {
 	const isNew = string !== current;
 	current = string;
 	return string && isNew;
+};
+
+/**
+ * Return the JSON string representation of a value.
+ * @function debugValue
+ * @author Paul Walton
+ * @arg {*} value
+ * @returns {string}
+ */
+exports.debugValue = function (value) {
+	return JSON.stringify(value, undefined, 2);
+};
+
+/**
+ * Check if value is not an array or is an array with length of 1.
+ * @author Paul Walton
+ * @param {*} value
+ * @returns {boolean}
+ */
+exports.isSingular = function isSingular(value) {
+	return !Array.isArray(value) || value.length === 1;
+};
+
+/**
+ * Overviews block
+ * @author Paul Walton
+ */
+exports.overview = function overview(options) {
+	options.hash.kind = "overview";
+	return handlebars.helpers.each(ddata._identifiers(options), options);
 };

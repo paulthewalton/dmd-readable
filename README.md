@@ -5,6 +5,7 @@
 > [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
+
 <br><a name="About"></a>
 
 ### About
@@ -84,3 +85,34 @@ Determines if the provided string is truthy and is different than the string pro
 | --- | --- |
 | string | <code>string</code> | 
 
+
+<br><a name="debugValue"></a>
+
+### debugValue(value) ⇒ <code>string</code>
+Return the JSON string representation of a value.
+
+**Author**: Paul Walton  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+
+<br><a name="isSingular"></a>
+
+### isSingular(value) ⇒ <code>boolean</code>
+Check if value is not an array or is an array with length of 1.
+
+**Author**: Paul Walton  
+
+| Param | Type |
+| --- | --- |
+| value | <code>\*</code> | 
+
+
+<br><a name="overview"></a>
+
+### overview()
+Overviews block
+
+**Author**: Paul Walton  

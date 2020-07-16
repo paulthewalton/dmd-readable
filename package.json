@@ -36,7 +36,9 @@
 	},
 	"homepage": "https://github.com/paulthewalton/dmd-readable#readme",
 	"dependencies": {
-		"change-case": "^4.1.1"
+		"change-case": "^4.1.1",
+		"dmd": "^5.0.2",
+		"handlebars": "^4.7.6"
 	},
 	"devDependencies": {
 		"jsdoc-to-markdown": "^6.0.1"
